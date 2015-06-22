@@ -1,0 +1,32 @@
+######################################################################
+#
+# {{ PATH
+#
+
+export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-amd64/
+export MOZILLA_HOME=$HOME/.mozilla
+
+#export ARM_EABI=/opt/arm-eabi-4.3.1/bin
+#export ANDRIOD_TOOLCHAIN/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools
+#export COVERITY_TOOLCHAIN=/opt/cov-sa-linux-5.5.3/bin
+
+export PATH=$RDK_BUILD_TOOLS:$PATH:~/bin
+
+#
+# }} PATH
+# 
+######################################################################
+
+
+######################################################################
+#
+# {{ Favorite Directories
+#
+
+alias Works='cd /data/work'
+alias prj='cd $PROJECT_DIR'
+
+#
+# }} Favorite Directories
+# 
+######################################################################
