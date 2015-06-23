@@ -175,12 +175,14 @@ color blueshift
 "auto start
 autocmd VimEnter * Tlist
 autocmd VimEnter * TMFocus
+autocmd VimEnter * wincmd l
 
 
 "new shortcut
 "ref) http://stackoverflow.com/questions/3249275
-nmap <C-W>t :tabnew #<CR>:TMFocus<CR>:Tlist<CR>
+nmap <C-W>t :tab split<CR>:TMFocus<CR><C-W><Right>:Tlist<CR>
 
 
 "my command example
 "com! H echo "hello world"
+
