@@ -1,4 +1,3 @@
-"help OPTION                                                                                                                                                        
 
 
 syntax on
@@ -54,9 +53,6 @@ set hlsearch
 set cursorline
 
 
-color torte
-
-
 "Ignore Case
 "set ic
 
@@ -66,8 +62,8 @@ set cb=unnamed
 
 
 "show match bracket
-"set showmatch
-"set matchtime=5
+set showmatch
+set matchtime=5
 
 
 "Window Fix Width
@@ -146,6 +142,12 @@ Plugin 'https://github.com/wesleyche/SrcExpl'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'DoxyGen-Syntax'
 
+"color schemes
+Plugin 'Blueshift'
+Plugin 'Solarized'
+Plugin 'Cleanroom'
+Plugin 'summerfruit256.vim'
+
 call vundle#end()            "required
 filetype plugin indent on    "required
 
@@ -159,8 +161,15 @@ let g:vim_markdown_folding_disabled=1
 
 
 "tabman plugin
-let g:tabman_width = 25
+let g:tabman_width = 20
 let g:tabman_side = 'left'
+
+
+"colorschemes
+"set t_Co=256
+color blueshift
+"color torte
+"color summerfruit256
 
 
 "auto start
