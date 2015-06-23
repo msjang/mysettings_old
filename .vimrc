@@ -193,3 +193,14 @@ nmap <C-W>t :tab split<CR><F2><C-W><Right><F3><F4>
 "neocomplete plugin
 let g:neocomplete#enable_at_startup = 1
 
+
+"cscope plugin
+let csfs=['./cscope.out','../cscope.out','../../cscope.out','../../../cscope.out','../../../../cscope.out', '../../../../../cscope.out']
+for csf in csfs
+  if filereadable(csf)
+    exe "cs add" csf
+	echo (csf . " selected")
+	break
+  endif
+endfor
+
