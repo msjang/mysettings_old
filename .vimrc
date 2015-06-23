@@ -99,7 +99,7 @@ nnoremap <silent> <F4> :NERDTreeToggle<CR>
 
 
 " ctags plugin
-set tags=./tags,tags,../tags,../../tags,../../../tags,../../../../tags
+set tags=./tags,tags,../tags,../../tags,../../../tags,../../../../tags,../../../../../tags
 "set tag=./tags;/
 
 
