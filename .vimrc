@@ -38,7 +38,8 @@ set statusline=%<%F%h%m%r%h%w%y\ %{strftime(\"%Y/%m/%d-%H:%M\")}%=\ col:%c%V\ as
 
 
 "붙이기 모드로 전환
-set paste
+"set paste
+nnoremap <silent> ,p :<C-U>set paste!<CR>:<C-U>echo("Toggle PasteMode => " . (&paste == 0 ? "Off" : "On"))<CR>
 
 
 "마우스 사용
@@ -86,7 +87,7 @@ endif
 
 "Taglist plugin
 filetype on
-nnoremap <silent> <F2> :TlistToggle<CR>
+nnoremap <silent> <F3> :TlistToggle<CR>
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 let Tlist_Inc_Winwidth = 0
 let Tlist_Exit_OnlyWindow = 0
@@ -95,7 +96,7 @@ let Tlist_Use_Right_Window = 1
 
 
 "Source Explorer plugin
-nnoremap <silent> <F3> :SrcExplToggle<CR>
+nnoremap <silent> <F4> :SrcExplToggle<CR>
 
 
 "nmap <F8> :SrcExplToggle<CR>
@@ -113,7 +114,7 @@ let g:SrcExpl_isUpdateTags = 0
 
 "NERDTree plugin
 let NERDTreeWinPos = "left"
-nnoremap <silent> <F4> :NERDTreeToggle<CR>
+nnoremap <silent> <F5> :NERDTreeToggle<CR>
 "nmap <F9> :NERDTreeToggle<CR>
 
 
@@ -132,7 +133,9 @@ call vundle#begin()
 
 "let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'AutoComplPop'
+Plugin 'https://github.com/Shougo/neocomplete.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tabman.vim'
 Plugin 'VOoM'
@@ -153,7 +156,7 @@ filetype plugin indent on    "required
 
 
 "YouCompleteMe plugin
-let g:ycm_global_ycm_extra_conf ='/home/msjang/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_global_ycm_extra_conf ='/home/msjang/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 
 "vim-markdown plugin
@@ -163,7 +166,7 @@ let g:vim_markdown_folding_disabled=1
 "tabman plugin
 let g:tabman_width = 20
 let g:tabman_side = 'left'
-
+nnoremap <silent> <F2> :TMToggle<CR>
 
 "colorschemes
 "set t_Co=256
@@ -173,16 +176,20 @@ color blueshift
 
 
 "auto start
-autocmd VimEnter * Tlist
-autocmd VimEnter * TMFocus
+autocmd VimEnter * TlistToggle
+autocmd VimEnter * TMToggle
 autocmd VimEnter * wincmd l
 
 
 "new shortcut
 "ref) http://stackoverflow.com/questions/3249275
-nmap <C-W>t :tab split<CR>:TMFocus<CR><C-W><Right>:Tlist<CR>
+nmap <C-W>t :tab split<CR><F2><C-W><Right><F3><F4>
 
 
 "my command example
 "com! H echo "hello world"
+
+
+"neocomplete plugin
+let g:neocomplete#enable_at_startup = 1
 
