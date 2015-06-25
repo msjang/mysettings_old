@@ -144,6 +144,7 @@ Plugin 'taglist.vim'
 Plugin 'https://github.com/wesleyche/SrcExpl'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'DoxyGen-Syntax'
+Plugin 'Tabular'
 
 "color schemes
 Plugin 'Blueshift'
@@ -183,7 +184,7 @@ autocmd VimEnter * wincmd l
 
 "new shortcut
 "ref) http://stackoverflow.com/questions/3249275
-nmap <C-W>t :tab split<CR><F2><C-W><Right><F3><F4>
+nmap <C-W>t :tab split<CR><F2><C-W><Right><F3>
 
 
 "my command example
@@ -199,7 +200,7 @@ let csfs=['./cscope.out','../cscope.out','../../cscope.out','../../../cscope.out
 for csf in csfs
   if filereadable(csf)
     exe "cs add" csf
-	echo (csf . " selected")
+	"echo (csf . " selected")
 	break
   endif
 endfor
