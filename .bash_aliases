@@ -1,4 +1,6 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
+#For include once
+ISSET_BASH_ALIASES=1
 
 ######################################################################
 #
@@ -456,11 +458,32 @@ function gpg-encrypt {
 
 ######################################################################
 #
+# {{ PROFILE
+#
+
+if [ -z "$ISSET_BASH_PROFILE" ]; then
+	ISSET_BASH_PROFILE=1
+	if [ -f ~/.bash_profile ]; then
+		. ~/.bash_profile
+	fi
+fi
+
+#
+# }} PROFILE
+# 
+######################################################################
+
+
+######################################################################
+#
 # {{ PATH
 #
 
-if [ -f ~/.bash_path ]; then
-    . ~/.bash_path
+if [ -z "$ISSET_BASH_PATH" ]; then
+	ISSET_BASH_PATH=1
+	if [ -f ~/.bash_path ]; then
+		. ~/.bash_path
+	fi
 fi
 
 #
@@ -468,17 +491,3 @@ fi
 # 
 ######################################################################
 
-
-######################################################################
-#
-# {{ PROFILE
-#
-
-if [ -f ~/.bash_profile ]; then
-    . ~/.bash_profile
-fi
-
-#
-# }} PROFILE
-# 
-######################################################################
