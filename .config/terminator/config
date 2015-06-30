@@ -1,7 +1,10 @@
 [global_config]
+  enabled_plugins = CustomCommandsMenu, InactivityWatch, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, LaunchpadBugURLHandler
 [keybindings]
 [profiles]
   [[default]]
+    copy_on_selection = True
+    visible_bell = True
   [[WhiteBackground]]
     use_theme_colors = True
 [layouts]
@@ -9,7 +12,10 @@
     [[[child1]]]
       type = Terminal
       parent = window0
+      profile = default
     [[[window0]]]
       type = Window
       parent = ""
+      profile = None
+      size = 1800, 1012
 [plugins]
