@@ -168,6 +168,7 @@ let g:vim_markdown_folding_disabled=1
 let g:tabman_width = 20
 let g:tabman_side = 'left'
 nnoremap <silent> <F2> :TMToggle<CR>
+nmap <C-W>g :TMFocus<CR>
 
 "colorschemes
 "set t_Co=256
@@ -196,7 +197,7 @@ let g:neocomplete#enable_at_startup = 1
 
 
 "cscope plugin
-let csfs=['./cscope.out','../cscope.out','../../cscope.out','../../../cscope.out','../../../../cscope.out', '../../../../../cscope.out']
+let csfs=['./cscope.out','../cscope.out','../../cscope.out','../../../cscope.out','../../../../cscope.out', '../../../../../cscope.out', '../../../../../../cscope.out', '../../../../../../../cscope.out']
 for csf in csfs
   if filereadable(csf)
     exe "cs add" csf
