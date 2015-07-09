@@ -1,0 +1,17 @@
+#ref http://www.gnu.org/software/screen/manual/screen.html#Logging
+logfile flush 2
+logfile /home/msjang/screenlog.%t
+logtstamp after 10
+logtstamp on
+logtstamp string '-- %n:%t -- time-stamp -- %M/%d/%y %c:%s --'
+deflog on
+
+
+term screen-256color
+bind ',' prev
+bind '.' next
+
+
+#change the hardstatus settings to give an window list at the bottom of the screen, with the time and date and with the current window highlighted
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
